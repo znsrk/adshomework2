@@ -21,6 +21,17 @@ public class Experiment {
     }
 
     public void runMultipleTests() {
+        Graph small = buildGraph(10);
+        Graph medium = buildGraph(30);
+        Graph large = buildGraph(100);
+
+        small.setPrintTraversal(false);
+        medium.setPrintTraversal(false);
+        large.setPrintTraversal(false);
+
+        runTraversals(small, 0, 10);
+        runTraversals(medium, 0, 30);
+        runTraversals(large, 0, 100);
     }
 
     public void printResults() {
@@ -39,5 +50,20 @@ public class Experiment {
             this.bfsTime = bfsTime;
             this.dfsTime = dfsTime;
         }
+    }
+
+    public static Graph buildGraph(int size) {
+        Graph g = new Graph();
+        for (int i = 0; i < size; i++) {
+            g.addVertex(new Vertex(i));
+        }
+        for (int i = 0; i < size - 1; i++) {
+            g.addEdge(i, i + 1);
+        }
+        for (int i = 0; i < size; i++) {
+            int jump = (i + 3) % size;
+            g.addEdge(i, jump);
+        }
+        return g;
     }
 }
