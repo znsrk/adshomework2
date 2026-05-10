@@ -1,0 +1,14 @@
+*.class
+*.log
+*.tmp
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+*.7z
+bin/
+out/
+.idea/
+.vscode/
+.DS_Store
