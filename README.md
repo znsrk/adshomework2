@@ -11,8 +11,8 @@ DFS steps go like this start with the source, mark it visited, go to the first u
 Experimental results
 Execution time comparison table
 10 vertices: not measured in this run
-30 vertices: BFS 48800 ns, DFS 34700 ns
-100 vertices: BFS 212600 ns, DFS 197800 ns
+30 vertices: both were fast with DFS a little quicker
+100 vertices: both were slower with size and DFS still a little quicker
 Observations and patterns: times go up as the graph gets bigger and DFS was a bit faster in this run, the difference is small so hardware noise can matter
 
 Screenshots
